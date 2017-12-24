@@ -9,7 +9,7 @@ import (
 	"strconv"
 )
 
-func sumLine(input []int) int {
+func findRange(input []int) int {
 	low := math.MaxInt64
 	high := 0
 	for _, value := range input {
@@ -23,10 +23,22 @@ func sumLine(input []int) int {
 	return high-low
 }
 
-func dayTwo(fileName string) int {
+func findAlt(input []int) int {
+	for _, value := range input {
+		for _, value2 := range input {
+			if value > value2 && value%value2==0 {
+				return value/value2
+			}
+		}
+	}
+	panic("Contract broken, not found one number divisible by another")
+}
+
+func dayTwo(fileName string) (int, int) {
 	file, _ := os.Open(fileName)
 	defer file.Close()
-	checksum := 0
+	rangeAddition := 0
+	divisorAddition := 0
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		list := []int{}
@@ -34,11 +46,14 @@ func dayTwo(fileName string) int {
 			i, _ := strconv.Atoi(p)
 			list = append(list, i)
 		}
-		checksum += sumLine(list)
+		rangeAddition += findRange(list)
+		divisorAddition += findAlt(list)
 	}
-	return checksum
+	return rangeAddition, divisorAddition
 }
 
 func main()  {
-	fmt.Println("Checksum =", dayTwo("input.txt"))
+	rangeAddition, divisorAddition := dayTwo("input.txt")
+	fmt.Println("Checksum =", rangeAddition)
+	fmt.Println("Checksum2 =", divisorAddition)
 }
