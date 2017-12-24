@@ -33,8 +33,49 @@ func TestFour(t *testing.T) {
 	}
 }
 
-func BenchmarkOne(b *testing.B) {
+func TestOneBonus(t *testing.T) {
+	actual := dayOneBonus(strings.Split("1212", ""))
+	if actual != 6 {
+		t.Error("Expected 6, got ", actual)
+	}
+}
+
+func TestTwoBonus(t *testing.T) {
+	actual := dayOneBonus(strings.Split("1221", ""))
+	if actual != 0 {
+		t.Error("Expected 0, got ", actual)
+	}
+}
+
+func TestThreeBonus(t *testing.T) {
+	actual := dayOneBonus(strings.Split("123425", ""))
+	if actual != 4 {
+		t.Error("Expected 4, got ", actual)
+	}
+}
+
+func TestFourBonus(t *testing.T) {
+	actual := dayOneBonus(strings.Split("123123", ""))
+	if actual != 12 {
+		t.Error("Expected 12, got ", actual)
+	}
+}
+
+func TestFiveBonus(t *testing.T) {
+	actual := dayOneBonus(strings.Split("12131415", ""))
+	if actual != 4 {
+		t.Error("Expected 4, got ", actual)
+	}
+}
+
+func Benchmark(b *testing.B) {
 	for i := 0 ; i <b.N ; i++ {
-		dayOne(strings.Split("1122", ""))
+		dayOne(strings.Split("91212129", ""))
+	}
+}
+
+func BenchmarkBonus(b *testing.B) {
+	for i := 0 ; i <b.N ; i++ {
+		dayOneBonus(strings.Split("12131415", ""))
 	}
 }
