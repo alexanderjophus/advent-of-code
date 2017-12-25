@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import unittest
-from day3 import manhattan_distance
+from day3 import manhattan_distance, first_largest_number
 
 
 class TestManhattanDistance(unittest.TestCase):
@@ -26,3 +26,28 @@ class TestManhattanDistance(unittest.TestCase):
         self.assertEqual(1, manhattan_distance(4))
         self.assertEqual(2, manhattan_distance(9))
         self.assertEqual(3, manhattan_distance(16))
+
+
+class TestFirstLargestNumber(unittest.TestCase):
+
+    @unittest.skip("not implemented yet")
+    def test_first_largest_number_1(self):
+        self.assertEqual(2, first_largest_number(1))
+
+    @unittest.skip("not implemented yet")
+    def test_first_largest_number_2(self):
+        self.assertEqual(4, first_largest_number(2))
+
+    @unittest.skip("not implemented yet")
+    def test_first_largest_number_3(self):
+        self.assertEqual(4, first_largest_number(3))
+
+    @unittest.skip("not implemented yet")
+    def test_first_largest_number_4(self):
+        self.assertEqual(5, first_largest_number(4))
+
+    @unittest.skip("not implemented yet")
+    def test_first_largest_number_large(self):
+        self.assertEqual(122, first_largest_number(100))
+        self.assertEqual(304, first_largest_number(300))
+        self.assertEqual(747, first_largest_number(500))

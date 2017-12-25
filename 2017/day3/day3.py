@@ -17,5 +17,11 @@ def manhattan_distance(number):
     return (min(abs(number-v), abs(number-h)))+ceil(i/2)
 
 
+def first_largest_number(number):
+    raise NotImplementedError
+
+
 if __name__ == '__main__':
-    print("Result: ", manhattan_distance(347991))
+    user_input = 347991
+    print("Manhattan Result: ", manhattan_distance(user_input))
+    # print("First Largest Result: ", first_largest_number(user_input))
