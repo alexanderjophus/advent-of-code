@@ -9,14 +9,10 @@ import (
 func dayOne(input []string) int {
 	result := 0
 	for index, value := range input {
-		if index > 0 && input[index-1] == value {
+		if input[(index+1)%len(input)] == value {
 			intValue, _ := strconv.Atoi(value)
 			result += intValue
 		}
-	}
-	if input[0] == input[len(input)-1] {
-		intValue, _ := strconv.Atoi(input[0])
-		result += intValue
 	}
 	return result
 }
