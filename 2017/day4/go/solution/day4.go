@@ -1,19 +1,16 @@
-package main
+package solution
 
 import (
 	"os"
 	"bufio"
 	"strings"
-	"fmt"
 	"sort"
 )
 
 type fn func([]string) bool
 
-func countValidPassphrases(fileName string, f fn) int {
+func CountValidPassphrases(file *os.File, f fn) int {
 	counter := 0
-	file, _ := os.Open(fileName)
-	defer file.Close()
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan(){
 		var list []string
@@ -27,7 +24,7 @@ func countValidPassphrases(fileName string, f fn) int {
 	return counter
 }
 
-func isValidPassphrase(input []string) bool {
+func IsValidPassphrase(input []string) bool {
 	set := StringSet{}
 	for _, value := range input {
 		if set.add(value) == false {
@@ -37,7 +34,7 @@ func isValidPassphrase(input []string) bool {
 	return true
 }
 
-func isOrderedValidPassphrase(input []string) bool {
+func IsOrderedValidPassphrase(input []string) bool {
 	set := StringSet{}
 	for _, value := range input {
 		if set.addOrdered(value) == false {
@@ -70,9 +67,4 @@ func (set *StringSet) addOrdered(i string) bool {
 	_, found := set.set[i]
 	set.set[i] = true
 	return !found   //False if it existed already
-}
-
-func main()  {
-	fmt.Println("Part 1:", countValidPassphrases("input.txt", isValidPassphrase))
-	fmt.Println("Part 2:", countValidPassphrases("input.txt", isOrderedValidPassphrase))
 }

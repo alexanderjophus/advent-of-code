@@ -1,7 +1,8 @@
-package main
+package solution
 
 import (
 	"testing"
+	"os"
 )
 
 func TestRangeLineOne(t *testing.T) {
@@ -26,7 +27,9 @@ func TestRangeLineThree(t *testing.T) {
 }
 
 func TestRangeFile1(t *testing.T) {
-	actualSum, actualDivisor := dayTwo("test1.txt")
+	file, _ := os.Open("test1.txt")
+	defer file.Close()
+	actualSum, actualDivisor := DayTwo(file)
 	if actualSum != 18 {
 		t.Error("Expected 18, got ", actualSum)
 	}

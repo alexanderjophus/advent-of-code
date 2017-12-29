@@ -1,10 +1,9 @@
-package main
+package solution
 
 import (
 	"math"
 	"bufio"
 	"os"
-	"fmt"
 	"strings"
 	"strconv"
 )
@@ -34,9 +33,7 @@ func findAlt(input []int) int {
 	panic("Contract broken, not found one number divisible by another")
 }
 
-func dayTwo(fileName string) (int, int) {
-	file, _ := os.Open(fileName)
-	defer file.Close()
+func DayTwo(file *os.File) (int, int) {
 	rangeAddition := 0
 	divisorAddition := 0
 	scanner := bufio.NewScanner(file)
@@ -50,10 +47,4 @@ func dayTwo(fileName string) (int, int) {
 		divisorAddition += findAlt(list)
 	}
 	return rangeAddition, divisorAddition
-}
-
-func main()  {
-	rangeAddition, divisorAddition := dayTwo("input.txt")
-	fmt.Println("Checksum =", rangeAddition)
-	fmt.Println("Checksum2 =", divisorAddition)
 }

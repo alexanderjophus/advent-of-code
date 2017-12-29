@@ -1,13 +1,12 @@
-package main
+package solution
 
 import (
-	"fmt"
 	"os"
 	"bufio"
 	"strconv"
 )
 
-func day5(input []int) int {
+func Day5(input []int) int {
 	counter := 0
 	for i := 0 ; 0 <= i && i < len(input) ; counter++ {
 		input[i] ++
@@ -16,7 +15,7 @@ func day5(input []int) int {
 	return counter
 }
 
-func day5Bonus(input []int) int {
+func Day5Bonus(input []int) int {
 	counter := 0
 	for i := 0 ; 0 <= i && i < len(input) ; counter++ {
 		if input[i] >= 3 {
@@ -30,7 +29,7 @@ func day5Bonus(input []int) int {
 	return counter
 }
 
-func readFile(filename string) []int {
+func ReadFile(filename string) []int {
 	file, _ := os.Open(filename)
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
@@ -43,6 +42,4 @@ func readFile(filename string) []int {
 }
 
 func main()  {
-	fmt.Println("Steps part 1: ", day5(readFile("input.txt")))
-	fmt.Println("Steps part 2: ", day5Bonus(readFile("input.txt")))
 }
