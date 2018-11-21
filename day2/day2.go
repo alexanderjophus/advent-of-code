@@ -1,14 +1,14 @@
-package solution
+package day2
 
 import (
-	"math"
 	"bufio"
+	"math"
 	"os"
-	"strings"
 	"strconv"
+	"strings"
 )
 
-func findRange(input []int) int {
+func FindRange(input []int) int {
 	low := math.MaxInt64
 	high := 0
 	for _, value := range input {
@@ -19,14 +19,14 @@ func findRange(input []int) int {
 			high = value
 		}
 	}
-	return high-low
+	return high - low
 }
 
-func findAlt(input []int) int {
+func FindAlt(input []int) int {
 	for _, value := range input {
 		for _, value2 := range input {
-			if value > value2 && value%value2==0 {
-				return value/value2
+			if value > value2 && value%value2 == 0 {
+				return value / value2
 			}
 		}
 	}
@@ -43,8 +43,8 @@ func DayTwo(file *os.File) (int, int) {
 			i, _ := strconv.Atoi(p)
 			list = append(list, i)
 		}
-		rangeAddition += findRange(list)
-		divisorAddition += findAlt(list)
+		rangeAddition += FindRange(list)
+		divisorAddition += FindAlt(list)
 	}
 	return rangeAddition, divisorAddition
 }

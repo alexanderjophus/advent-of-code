@@ -1,18 +1,16 @@
-package solution
+package day4
 
 import (
-	"os"
 	"bufio"
-	"strings"
+	"os"
 	"sort"
+	"strings"
 )
 
-type fn func([]string) bool
-
-func CountValidPassphrases(file *os.File, f fn) int {
+func CountValidPassphrases(file *os.File, f func([]string) bool) int {
 	counter := 0
 	scanner := bufio.NewScanner(file)
-	for scanner.Scan(){
+	for scanner.Scan() {
 		var list []string
 		for _, p := range strings.Fields(scanner.Text()) {
 			list = append(list, p)
@@ -54,7 +52,7 @@ func (set *StringSet) add(i string) bool {
 	}
 	_, found := set.set[i]
 	set.set[i] = true
-	return !found   //False if it existed already
+	return !found //False if it existed already
 }
 
 func (set *StringSet) addOrdered(i string) bool {
@@ -66,5 +64,5 @@ func (set *StringSet) addOrdered(i string) bool {
 	}
 	_, found := set.set[i]
 	set.set[i] = true
-	return !found   //False if it existed already
+	return !found //False if it existed already
 }

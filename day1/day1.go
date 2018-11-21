@@ -1,4 +1,4 @@
-package solution
+package day1
 
 import (
 	"strconv"
@@ -17,11 +17,11 @@ func DayOne(input []string) int {
 
 func DayOneBonus(input []string) int {
 	result := 0
-	half := len(input)/2
-	for i := 0 ; i < half ; i++ {
+	half := len(input) / 2
+	for i := 0; i < half; i++ {
 		if input[i] == input[half+i] {
 			intValue, _ := strconv.Atoi(input[i])
-			result += intValue*2
+			result += intValue * 2
 		}
 	}
 	return result

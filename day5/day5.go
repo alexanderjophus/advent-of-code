@@ -1,15 +1,15 @@
-package solution
+package day5
 
 import (
-	"os"
 	"bufio"
+	"os"
 	"strconv"
 )
 
 func Day5(input []int) int {
 	counter := 0
-	for i := 0 ; 0 <= i && i < len(input) ; counter++ {
-		input[i] ++
+	for i := 0; 0 <= i && i < len(input); counter++ {
+		input[i]++
 		i = i + input[i] - 1
 	}
 	return counter
@@ -17,12 +17,12 @@ func Day5(input []int) int {
 
 func Day5Bonus(input []int) int {
 	counter := 0
-	for i := 0 ; 0 <= i && i < len(input) ; counter++ {
+	for i := 0; 0 <= i && i < len(input); counter++ {
 		if input[i] >= 3 {
-			input[i] --
+			input[i]--
 			i = i + input[i] + 1
 		} else {
-			input[i] ++
+			input[i]++
 			i = i + input[i] - 1
 		}
 	}
@@ -30,7 +30,7 @@ func Day5Bonus(input []int) int {
 }
 
 func ReadFile(filename string) []int {
-	file, _ := os.Open(filename)
+	file, _ := os.Open(filename) // bad practice :()
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
 	var ret []int
@@ -39,7 +39,4 @@ func ReadFile(filename string) []int {
 		ret = append(ret, a)
 	}
 	return ret
-}
-
-func main()  {
 }
