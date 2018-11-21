@@ -28,3 +28,9 @@ func TestDay3(t *testing.T) {
 		})
 	}
 }
+
+func BenchmarkDay3(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		day3.Day3(1024)
+	}
+}

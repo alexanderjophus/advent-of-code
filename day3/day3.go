@@ -1,6 +1,8 @@
 package day3
 
-import "math"
+import (
+	"math"
+)
 
 // Day3 Algorithm relies on square numbers. Designed for efficiency this algorithm avoids costly operations such as sqrt
 // First, determine the floor of the root of the number-1. i.e. 12 -> 3, 21 -> 4, 1 -> 0
