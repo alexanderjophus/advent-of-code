@@ -88,6 +88,8 @@ func main() {
 		res = day5.Day5Bonus(input)
 	case "6.1":
 		res = day6.Day6([]int{5, 1, 10, 0, 1, 7, 13, 14, 3, 12, 8, 10, 7, 12, 0, 6})
+	case "6.2":
+		res = day6.Day6Bonus([]int{5, 1, 10, 0, 1, 7, 13, 14, 3, 12, 8, 10, 7, 12, 0, 6})
 	default:
 		fmt.Printf("Puzzle %s not found\n", puzzle)
 		return
