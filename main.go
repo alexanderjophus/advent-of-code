@@ -12,6 +12,7 @@ import (
 	"github.com/alexanderjosephtrelore/advent-of-code/day4"
 	"github.com/alexanderjosephtrelore/advent-of-code/day5"
 	"github.com/alexanderjosephtrelore/advent-of-code/day6"
+	"github.com/alexanderjosephtrelore/advent-of-code/day7"
 	"github.com/alexanderjosephtrelore/advent-of-code/io"
 )
 
@@ -38,6 +39,7 @@ func main() {
 	puzzle := fmt.Sprintf("%s.%s", day, part)
 
 	var res interface{}
+	var err error
 
 	switch puzzle {
 	case "1.1":
@@ -90,8 +92,15 @@ func main() {
 		res = day6.Day6([]int{5, 1, 10, 0, 1, 7, 13, 14, 3, 12, 8, 10, 7, 12, 0, 6})
 	case "6.2":
 		res = day6.Day6Bonus([]int{5, 1, 10, 0, 1, 7, 13, 14, 3, 12, 8, 10, 7, 12, 0, 6})
+	case "7.1":
+		res, err = day7.Day7("day7/input.txt")
 	default:
 		fmt.Printf("Puzzle %s not found\n", puzzle)
+		return
+	}
+
+	if err != nil {
+		fmt.Println(err)
 		return
 	}
 
