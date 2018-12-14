@@ -2,10 +2,25 @@ package day4
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"sort"
 	"strings"
 )
+
+func Solve(inputFile string) {
+	file, err := os.Open(inputFile)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
+	//p1 consuming file?
+	p1 := CountValidPassphrases(file, IsValidPassphrase)
+	file.Seek(0, 0)
+	p2 := CountValidPassphrases(file, IsOrderedValidPassphrase)
+	fmt.Printf("d4p1 = %d\nd4p2 = %d\n", p1, p2)
+}
 
 func CountValidPassphrases(file *os.File, f func([]string) bool) int {
 	counter := 0

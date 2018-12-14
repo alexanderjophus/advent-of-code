@@ -2,20 +2,28 @@ package day7
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"regexp"
 )
 
-var r = regexp.MustCompile(`[a-zA-Z]+`)
-var groupNames = r.SubexpNames()
-
-func Day7(filename string) (string, error) {
-	file, err := os.Open(filename)
+func Solve(inputFile string) {
+	file, err := os.Open(inputFile)
 	if err != nil {
-		return "", err
+		fmt.Println(err)
+		return
 	}
 	defer file.Close()
 
+	p1 := Day7(file)
+	// p2 := Day3Bonus(input)
+	fmt.Printf("d7p1 = %s\n", p1)
+}
+
+var r = regexp.MustCompile(`[a-zA-Z]+`)
+var groupNames = r.SubexpNames()
+
+func Day7(file *os.File) string {
 	stacks := make(map[string]int)
 
 	scanner := bufio.NewScanner(file)
@@ -29,9 +37,9 @@ func Day7(filename string) (string, error) {
 
 	for k, v := range stacks {
 		if v == 1 {
-			return k, nil
+			return k
 		}
 	}
 
-	return "", nil
+	return ""
 }

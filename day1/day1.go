@@ -1,8 +1,29 @@
 package day1
 
 import (
+	"bufio"
+	"fmt"
+	"os"
 	"strconv"
+	"strings"
 )
+
+func Solve(inputFile string) {
+	file, err := os.Open(inputFile)
+	defer file.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		input := strings.Split(scanner.Text(), "")
+
+		p1 := DayOne(input)
+		p2 := DayOneBonus(input)
+		fmt.Printf("d1p1 = %d\nd1p2 = %d\n", p1, p2)
+	}
+}
 
 func DayOne(input []string) int {
 	result := 0

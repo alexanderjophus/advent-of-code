@@ -1,8 +1,34 @@
 package day3
 
 import (
+	"bufio"
+	"fmt"
 	"math"
+	"os"
+	"strconv"
 )
+
+func Solve(inputFile string) {
+	file, err := os.Open(inputFile)
+	defer file.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		input, err := strconv.ParseFloat(scanner.Text(), 64)
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+
+		p1 := Day3(input)
+		// p2 := Day3Bonus(input)
+		fmt.Printf("d3p1 = %d\n", p1)
+	}
+
+}
 
 // Day3 Algorithm relies on square numbers. Designed for efficiency this algorithm avoids costly operations such as sqrt
 // First, determine the floor of the root of the number-1. i.e. 12 -> 3, 21 -> 4, 1 -> 0

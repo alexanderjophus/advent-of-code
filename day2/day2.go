@@ -2,11 +2,24 @@ package day2
 
 import (
 	"bufio"
+	"fmt"
 	"math"
 	"os"
 	"strconv"
 	"strings"
 )
+
+func Solve(inputFile string) {
+	file, err := os.Open("day2/input.txt")
+	defer file.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	p1, p2 := DayTwo(file)
+	fmt.Printf("d2p1 = %d\nd2p2 = %d\n", p1, p2)
+}
 
 func FindRange(input []int) int {
 	low := math.MaxInt64
