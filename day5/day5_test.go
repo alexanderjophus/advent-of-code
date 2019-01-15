@@ -3,7 +3,7 @@ package day5_test
 import (
 	"testing"
 
-	"github.com/alexanderjosephtrelore/advent-of-code/day5"
+	"github.com/trelore/advent-of-code/day5"
 )
 
 func TestSample(t *testing.T) {

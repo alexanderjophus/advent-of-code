@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/alexanderjosephtrelore/advent-of-code/day1"
-	"github.com/alexanderjosephtrelore/advent-of-code/day2"
-	"github.com/alexanderjosephtrelore/advent-of-code/day3"
-	"github.com/alexanderjosephtrelore/advent-of-code/day4"
-	"github.com/alexanderjosephtrelore/advent-of-code/day5"
-	"github.com/alexanderjosephtrelore/advent-of-code/day7"
-	"github.com/alexanderjosephtrelore/advent-of-code/day8"
+	"github.com/trelore/advent-of-code/day1"
+	"github.com/trelore/advent-of-code/day2"
+	"github.com/trelore/advent-of-code/day3"
+	"github.com/trelore/advent-of-code/day4"
+	"github.com/trelore/advent-of-code/day5"
+	"github.com/trelore/advent-of-code/day7"
+	"github.com/trelore/advent-of-code/day8"
 )
 
 var (
