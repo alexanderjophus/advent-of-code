@@ -1,4 +1,4 @@
-package day7
+package main
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 	"regexp"
 )
 
-func Solve(inputFile string) {
+func day7Solve(inputFile string) {
 	file, err := os.Open(inputFile)
 	if err != nil {
 		fmt.Println(err)

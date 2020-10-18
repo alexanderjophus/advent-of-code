@@ -1,4 +1,4 @@
-package day3
+package main
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-func Solve(inputFile string) {
+func day3Solve(inputFile string) {
 	file, err := os.Open(inputFile)
 	defer file.Close()
 	if err != nil {

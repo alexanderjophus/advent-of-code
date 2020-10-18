@@ -1,4 +1,4 @@
-package day8
+package main
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func Solve(fileName string) {
+func day8Solve(fileName string) {
 	file, err := os.Open(fileName)
 	if err != nil {
 		fmt.Println(err)

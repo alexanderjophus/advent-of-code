@@ -1,4 +1,4 @@
-package day1
+package main
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func Solve(inputFile string) {
+func day1Solve(inputFile string) {
 	file, err := os.Open(inputFile)
 	defer file.Close()
 	if err != nil {
@@ -19,13 +19,13 @@ func Solve(inputFile string) {
 	for scanner.Scan() {
 		input := strings.Split(scanner.Text(), "")
 
-		p1 := DayOne(input)
-		p2 := DayOneBonus(input)
+		p1 := day1(input)
+		p2 := day1Bonus(input)
 		fmt.Printf("d1p1 = %d\nd1p2 = %d\n", p1, p2)
 	}
 }
 
-func DayOne(input []string) int {
+func day1(input []string) int {
 	result := 0
 	for index, value := range input {
 		if input[(index+1)%len(input)] == value {
@@ -36,7 +36,7 @@ func DayOne(input []string) int {
 	return result
 }
 
-func DayOneBonus(input []string) int {
+func day1Bonus(input []string) int {
 	result := 0
 	half := len(input) / 2
 	for i := 0; i < half; i++ {

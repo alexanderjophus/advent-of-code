@@ -1,12 +1,12 @@
-package day5
+package main
 
 import (
 	"fmt"
 
-	"github.com/trelore/advent-of-code/go/2018/io"
+	"github.com/trelore/advent-of-code/go/2017/io"
 )
 
-func Solve(inputFile string) {
+func day5Solve(inputFile string) {
 	input, err := io.ReadFileIntSlice(inputFile)
 	if err != nil {
 		fmt.Println(err)

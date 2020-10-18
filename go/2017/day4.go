@@ -1,4 +1,4 @@
-package day4
+package main
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func Solve(inputFile string) {
+func day4Solve(inputFile string) {
 	file, err := os.Open(inputFile)
 	if err != nil {
 		fmt.Println(err)
