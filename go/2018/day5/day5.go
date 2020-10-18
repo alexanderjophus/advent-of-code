@@ -3,7 +3,7 @@ package day5
 import (
 	"fmt"
 
-	"github.com/trelore/advent-of-code/io"
+	"github.com/trelore/advent-of-code/go/2018/io"
 )
 
 func Solve(inputFile string) {

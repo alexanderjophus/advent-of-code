@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/trelore/advent-of-code/day1"
+	"github.com/trelore/advent-of-code/go/2018/day1"
 )
 
 func TestDayOne(t *testing.T) {

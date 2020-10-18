@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/trelore/advent-of-code/day3"
+	"github.com/trelore/advent-of-code/go/2018/day3"
 )
 
 func TestDay3(t *testing.T) {

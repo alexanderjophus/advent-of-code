@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/trelore/advent-of-code/io"
+	"github.com/trelore/advent-of-code/go/2018/io"
 )
 
 func TestFromFile(t *testing.T) {
