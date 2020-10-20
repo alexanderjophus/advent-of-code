@@ -1,3 +1,7 @@
 .idea/
 venv/
 **/*.exe
+
+rust/aoc2018/target
+
+*.lock
