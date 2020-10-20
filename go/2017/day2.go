@@ -1,4 +1,4 @@
-package main
+package twentyseventeen
 
 import (
 	"bufio"
@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func day2Solve(inputFile string) {
+func Day2Solve(inputFile string) {
 	file, err := os.Open(inputFile)
 	defer file.Close()
 	if err != nil {

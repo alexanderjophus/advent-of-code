@@ -1,4 +1,4 @@
-package main
+package twentyseventeen
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 	"regexp"
 )
 
-func day7Solve(inputFile string) {
+func Day7Solve(inputFile string) {
 	file, err := os.Open(inputFile)
 	if err != nil {
 		fmt.Println(err)
@@ -15,7 +15,7 @@ func day7Solve(inputFile string) {
 	}
 	defer file.Close()
 
-	p1 := Day7(file)
+	p1 := day7(file)
 	// p2 := Day3Bonus(input)
 	fmt.Printf("d7p1 = %s\n", p1)
 }
@@ -23,7 +23,7 @@ func day7Solve(inputFile string) {
 var r = regexp.MustCompile(`[a-zA-Z]+`)
 var groupNames = r.SubexpNames()
 
-func Day7(file *os.File) string {
+func day7(file *os.File) string {
 	stacks := make(map[string]int)
 
 	scanner := bufio.NewScanner(file)

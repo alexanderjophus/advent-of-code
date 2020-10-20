@@ -1,4 +1,4 @@
-package main
+package twentyseventeen
 
 import (
 	"reflect"
@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func Day6(input []int) int {
+func day6(input []int) int {
 	iterations := 0
 	seen := make(map[string]bool)
 	for {
@@ -19,7 +19,7 @@ func Day6(input []int) int {
 	}
 }
 
-func Day6Bonus(input []int) int {
+func day6Bonus(input []int) int {
 	hare := make([]int, len(input))
 	tortoise := make([]int, len(input))
 	copy(hare, input)

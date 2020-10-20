@@ -1,4 +1,4 @@
-package main
+package twentyseventeen
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func day8Solve(fileName string) {
+func Day8Solve(fileName string) {
 	file, err := os.Open(fileName)
 	if err != nil {
 		fmt.Println(err)
@@ -18,7 +18,7 @@ func day8Solve(fileName string) {
 
 }
 
-func Day8(file *os.File) (int, error) {
+func day8(file *os.File) (int, error) {
 	registers := make(map[string]int)
 
 	scanner := bufio.NewScanner(file)
